@@ -1,0 +1,130 @@
+/* src/pages/Login.css */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1504198453319-5ce911bafcde");
+    /* Placeholder */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Para o overlay */
+}
+
+/* Overlay escuro */
+.login-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fundo escuro semi-transparente */
+    backdrop-filter: blur(3px);
+    /* Efeito de desfoque (opcional) */
+    z-index: 1;
+    /* Garante que fique acima do fundo, mas abaixo do modal */
+}
+
+.login-modal {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    z-index: 2;
+    /* Garante que fique acima do overlay */
+    position: relative;
+    /* Necessário para o z-index funcionar corretamente */
+}
+
+.login-modal h1 {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* Para incluir padding e border no width */
+    font-size: 1em;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    /* Verde sugerido */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-button:hover:not(:disabled) {
+    background-color: #218838;
+    /* Verde mais escuro no hover */
+}
+
+.login-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #dc3545;
+    /* Vermelho para erros */
+    margin-top: -10px;
+    /* Aproxima do campo de senha */
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.forgot-password {
+    margin-top: 20px;
+}
+
+.forgot-password a {
+    color: #007bff;
+    /* Azul para links */
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade básica */
+@media (max-width: 480px) {
+    .login-modal {
+        padding: 20px;
+    }
+
+    .login-modal h1 {
+        font-size: 1.5em;
+    }
+}
